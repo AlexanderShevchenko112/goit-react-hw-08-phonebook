@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: center;
   margin-left: 15px;
+  margin-top: 5px;
 }
 .deleteBtn:hover {
   background-color: yellow;
