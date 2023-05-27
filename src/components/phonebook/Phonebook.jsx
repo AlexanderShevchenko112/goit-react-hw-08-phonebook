@@ -8,9 +8,9 @@ const Phonebook = () => {
       <div className={css.phonebookContainer}>
         <ContactForm />
         <Filter />
+        <h2 className={css.phonebookTitle}>Contacts</h2>
+        <ContactList />
       </div>
-      <h2 className={css.phonebookTitle}>Contacts</h2>
-      <ContactList />
     </>
   );
 };
