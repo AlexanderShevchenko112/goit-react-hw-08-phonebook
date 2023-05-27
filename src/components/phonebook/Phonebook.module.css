@@ -1,0 +1,10 @@
+.phonebookContainer {
+  height: 100vh;
+  background-color: rgb(27, 129, 219);
+  padding: 30px;
+}
+.phonebookTitle {
+  color: aliceblue;
+  text-decoration: underline;
+  text-align: center;
+}

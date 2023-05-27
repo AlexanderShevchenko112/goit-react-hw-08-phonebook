@@ -12,7 +12,9 @@ const Filter = () => {
 
   return (
     <div className={css.filter}>
-      <label htmlFor="filterInput">Filter contacts by name: </label>
+      <label className={css.label} htmlFor="filterInput">
+        Filter contacts by name:{' '}
+      </label>
       <input
         type="text"
         id="filterInput"
