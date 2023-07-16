@@ -11,6 +11,10 @@ const Home = lazy(() => import('../pages/home/Home'));
 const Register = lazy(() => import('../pages/register/Register'));
 const Login = lazy(() => import('../pages/login/Login'));
 const Contacts = lazy(() => import('../pages/contacts/Contacts'));
+const ProfilePage = lazy(() => import('../pages/profilePage/ProfilePage'));
+const UpdateProfilePage = lazy(() =>
+  import('../pages/updateProfilePage/updateProfilePage')
+);
 
 const App = () => {
   const dispatch = useDispatch();
@@ -38,6 +42,27 @@ const App = () => {
             <RestrictedRoute redirectTo="/contacts" component={<Login />} />
           }
         />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute
+              redirectTo="/profile"
+              component={<ProfilePage />}
+            ></PrivateRoute>
+          }
+        >
+          {' '}
+        </Route>
+
+        <Route
+          path="/profile/update"
+          element={
+            <PrivateRoute
+              redirectTo="/update"
+              component={<UpdateProfilePage />}
+            ></PrivateRoute>
+          }
+        ></Route>
         <Route
           path="/contacts"
           element={

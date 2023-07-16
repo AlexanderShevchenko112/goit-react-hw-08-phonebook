@@ -1,8 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, logIn, logOut, refreshUser } from './authOperations';
+import {
+  register,
+  logIn,
+  logOut,
+  refreshUser,
+  addAvatar,
+} from './authOperations';
 
 const initialState = {
-  user: { name: null, email: null },
+  user: { name: null, email: null, avatarURL: null },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -12,6 +18,10 @@ const handleFulfilled = (state, action) => {
   state.user = action.payload.user;
   state.token = action.payload.token;
   state.isLoggedIn = true;
+};
+
+const handleFulfilledAvatar = (state, action) => {
+  state.user.avatarURL = action.payload;
 };
 
 const handleLogOutFulfilled = state => {
@@ -32,6 +42,7 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
+      .addCase(addAvatar.fulfilled, handleFulfilledAvatar)
       .addCase(register.fulfilled, handleFulfilled)
       .addCase(logIn.fulfilled, handleFulfilled)
       .addCase(logOut.fulfilled, handleLogOutFulfilled)
