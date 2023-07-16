@@ -10,7 +10,7 @@ import { useAuth } from 'hooks/useAuth';
 const Home = lazy(() => import('../pages/home/Home'));
 const Register = lazy(() => import('../pages/register/Register'));
 const Login = lazy(() => import('../pages/login/Login'));
-const Contacts = lazy(() => import('../pages/contacts/Contacts'));
+// const Contacts = lazy(() => import('../pages/contacts/Contacts'));
 const ProfilePage = lazy(() => import('../pages/profilePage/ProfilePage'));
 const UpdateProfilePage = lazy(() =>
   import('../pages/updateProfilePage/updateProfilePage')
